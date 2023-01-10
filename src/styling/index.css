@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  --blue: #0a327b;
+  --light-blue: #f9fafd;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Delicious", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-blue);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+.App {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  text-align: left;
+  font-weight: 800;
+  font-size: 24px;
+  margin: 32px;
+  display: inline-block;
+  margin-right: 11px;
+}
+
+a {
+  margin: 16px;
+  margin-left: 7px;
+  margin-right: 0px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+h1 {
+  font-size: 100px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.right-aligned {
+  float: right;
+  text-align: right;
+  margin: 32px;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+
+p {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+span {
+  margin-right: 0px;
+  display: inline-block;
+}

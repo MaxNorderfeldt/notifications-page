@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Mark Webber",
+        "action": {
+            "type": "follow",
+            "target": "test"
+        },
+        "date": "2022-12-22 10:00:00",
+        "read": false
+    },
+    {
+        "name": "Angela Gray",
+        "action": {
+            "type": "react",
+            "target": "My first tournament today"
+        },
+        "date": "2022-12-23 11:00:00",
+        "read": false
+    },
+    {
+        "name": "Jacob Thompson",
+        "action": {
+            "type": "join",
+            "target": "Chess Club"
+        },
+        "date": "2022-12-20 12:00:00",
+        "read": false
+    },
+    {
+        "name": "Rizky Hasanuddin",
+        "action": {
+            "type": "message",
+            "target": "Hello, thanks for setting up the Chess Club. I’ve been a member for a few weeks now and I’m already having lots of fun and improving my game."
+        },
+        "date": "2022-12-19 13:00:00",
+        "read": true
+    },
+    {
+        "name": "Kimberly Smith",
+        "action": {
+            "type": "comment"
+        },
+        "date": "2022-12-18 14:00:00",
+        "read": true
+    },
+    {
+        "name": "Nathan Peterson",
+        "action": {
+            "type": "react",
+            "target": "5 end-game strategies to increase your win rate"
+        },
+        "date": "2022-12-18 14:00:00",
+        "read": true
+    },
+    {
+        "name": "Anna Kim",
+        "action": {
+            "type": "left",
+            "target": "Chess Club"
+        },
+        "date": "2022-12-18 14:00:00",
+        "read": true
+    }
+]
