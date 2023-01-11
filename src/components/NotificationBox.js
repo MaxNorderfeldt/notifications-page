@@ -81,7 +81,7 @@ function NotificationBox(props) {
           >
             <div className="main-text">
               <img
-                src={require(avatarUrl)}
+                src={avatarUrl.toString()}
                 alt={notification.name}
                 id="avatar-image"
               ></img>
