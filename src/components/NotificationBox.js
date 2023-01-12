@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../styling/small.css";
 import "../styling/notifications.css";
 
 // importing the javascript-time-ago module
