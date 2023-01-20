@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "../styling/notifications.css";
 
 // importing the javascript-time-ago module
@@ -47,12 +47,6 @@ function NotificationBox(props) {
     return "test";
   }
 
-  function printMessage(action) {
-    if (action.type === "message") {
-      return <p>{action.target}</p>;
-    }
-  }
-
   useEffect(() => {
     let counter = 0;
     data.forEach((arr) => {
@@ -73,12 +67,12 @@ function NotificationBox(props) {
           notification.name.split(/[ ]/)[1] +
           ".webp";
         return (
-          <section
+          <div
             className={
               "notification" + (notification.read ? " read" : " unread")
             }
           >
-            <div className="main-text">
+            <div className="flex-container" id="notification-info">
               <img
                 src={avatarUrl.toLowerCase()}
                 alt={notification.name}
@@ -94,8 +88,12 @@ function NotificationBox(props) {
                 </span>
               </p>
             </div>
-            <div id="message-box">{printMessage(notification.action)}</div>
-          </section>
+            {notification.action.type === "message" ? (
+              <div id="message-box">
+                <p>{notification.action.target}</p>
+              </div>
+            ) : null}
+          </div>
         );
       })
     );
@@ -112,12 +110,15 @@ function NotificationBox(props) {
   }, []);
 
   return (
-    <section id="notifications">
-      <h2>Notifications</h2>
-      <h2 id="notificationCounter">{countNotifications}</h2>
-      <button className="right-aligned" onClick={readAll}>
-        Mark all as read
-      </button>
+    <section id="notifications" className="flex-container">
+      <div className="flex-header">
+        <h2>Notifications</h2>
+        <h2 id="notificationCounter">{countNotifications}</h2>
+        <button className="right-aligned" onClick={readAll}>
+          Mark all as read
+        </button>
+      </div>
+
       {notifications}
     </section>
   );
