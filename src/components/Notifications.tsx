@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 import "../styling/notifications.css";
 
-// importing the javascript-time-ago module
 import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en"; //This is because we want our display in english format
+import en from "javascript-time-ago/locale/en";
+import { INotification } from "./NotificationInterface";
 
-function Notifications(props) {
-  let { data, setData } = props;
+function Notifications(props: { data: INotification[] }) {
+  let { data } = props;
 
   const notifications = useMemo(() => {
     TimeAgo.addLocale(en);
@@ -21,6 +21,7 @@ function Notifications(props) {
       return (
         <div
           className={"notification" + (notification.read ? " read" : " unread")}
+          key={notification.name + notification.date}
         >
           <div className="flex-container" id="notification-info">
             <img
@@ -48,20 +49,20 @@ function Notifications(props) {
     });
   }, [data]);
 
-  function handleAction(action) {
+  function handleAction(action: INotification["action"]) {
     switch (action.type) {
       case "follow":
-        return <> followed you</>;
+        return <>followed you</>;
       case "react":
         return (
           <>
-            reacted to your recent post <a>{action.target}</a>
+            reacted to your recent post<a>{action.target}</a>
           </>
         );
       case "join":
         return (
           <>
-            has joined your <a>{action.target}</a>
+            has joined your<a>{action.target}</a>
           </>
         );
       case "message":
@@ -71,14 +72,12 @@ function Notifications(props) {
       case "left":
         return (
           <>
-            left the group <a>{action.target}</a>
+            left the group<a>{action.target}</a>
           </>
         );
-      default:
-        break;
     }
   }
-  return notifications;
+  return <>{notifications}</>;
 }
 
 export default Notifications;

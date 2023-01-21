@@ -1,7 +1,7 @@
-import NotificationBox from "./components/NotificationBox";
+import NotificationContaner from "./components/NotificationContainer";
 
 function App() {
-  return <NotificationBox />;
+  return <NotificationContaner />;
 }
 
 export default App;
