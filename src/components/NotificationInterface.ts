@@ -5,3 +5,7 @@ export interface INotification {
   date: string;
   type: string;
 }
+
+interface readAllNotifications {
+  readAllNotifications(): void;
+}

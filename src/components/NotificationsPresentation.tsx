@@ -1,7 +1,11 @@
-import React, { useMemo } from "react";
+import React, { MouseEventHandler } from "react";
 import "../styling/notifications.css";
 
-function Notifications(props: any) {
+function Notifications(props: {
+  notificationsCounter: number;
+  readAllNotifications: MouseEventHandler<HTMLButtonElement>;
+  notifications: JSX.Element[];
+}) {
   const { notificationsCounter, readAllNotifications, notifications } = props;
   return (
     <section id="notifications" className="flex-container">
